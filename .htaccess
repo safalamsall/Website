@@ -1,0 +1,15 @@
+# VulnShop .htaccess
+# VULNERABILITY: no security headers set
+# A secure site would add: X-Frame-Options, CSP, X-XSS-Protection, etc.
+
+Options -Indexes
+
+# Allow PHP execution in uploads (VULNERABILITY: enables webshell execution)
+<Directory "uploads">
+    php_flag engine on
+</Directory>
+
+# Serve placeholder image
+<FilesMatch "placeholder\.png$">
+    ForceType text/html
+</FilesMatch>

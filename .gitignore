@@ -1,0 +1,13 @@
+# Local configuration and generated files
+.env
+.env.*
+!.env.example
+*.log
+/uploads/*
+!/uploads/.gitkeep
+
+# Editor and operating-system files
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
